@@ -12,7 +12,7 @@ var config = {
 requirejs.optimize(config, function (buildResponse) {
 
     var appends = [
-        'requirejs(["',
+        'define(["',
             lib_name,
         '"], function (',
             lib_name,
