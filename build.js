@@ -6,16 +6,13 @@ var lib_name = 'router';
 var config = {
     baseUrl: 'src',
     name: lib_name,
-    out: 'dist/'+ lib_name + '-min.js',
-    gunbai: require('path').dirname(require.main.filename) + '/src/gunbai/dist/gunbai.min.js'
+    out: 'dist/'+ lib_name + '-min.js'
 };
 
 requirejs.optimize(config, function (buildResponse) {
 
-    //this appends turns the lib def into a returnable RequireJS
-    //module, also used by gunbai to execute standalone
     var appends = [
-        'define(["',
+        'requirejs(["',
             lib_name,
         '"], function (',
             lib_name,
@@ -24,22 +21,10 @@ requirejs.optimize(config, function (buildResponse) {
         '; });'
     ];
 
-    //append gunbai to henka to add standalone capabilities
     fs.appendFile(config.out, appends.join(''), function (err) {
       if (err) throw err;
-
-        var out = [
-            config.gunbai,
-            config.out
-        ].map(function(filePath){
-            return fs.readFileSync(filePath, 'utf-8');
-        });
-
-        fs.writeFileSync(config.out, out.join(''), 'utf-8');
-
-        console.log(lib_name + ' has been built!');
+      console.log(lib_name + ' has been built!');
     });
-
 }, function(err) {
     //optimization err callback
 });
