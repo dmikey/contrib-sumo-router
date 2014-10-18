@@ -4,3 +4,6 @@
 [submodule "src/haridashi"]
 	path = src/haridashi
 	url = https://github.com/dmikey/haridashi.git
+[submodule "src/gunbai"]
+	path = src/gunbai
+	url = https://github.com/dmikey/gunbai.git
