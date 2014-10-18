@@ -1,0 +1,6 @@
+[submodule "src/basho"]
+	path = src/basho
+	url = https://github.com/dmikey/basho.git
+[submodule "src/haridashi"]
+	path = src/haridashi
+	url = https://github.com/dmikey/haridashi.git
