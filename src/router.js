@@ -7,7 +7,7 @@ define(['basho/main', 'haridashi/main'], function (platform, utility) {
     };
 
     var router = {
-        //routes: [],
+		routeOnStart: true,
         hashchange: function() {
             var hash = window.location.hash;
             if(this.routes[hash]) {
@@ -20,7 +20,7 @@ define(['basho/main', 'haridashi/main'], function (platform, utility) {
             window.onhashchange = function () {
                 hashChange();
             }
-            if(hash.length > 0 && typeof hash == 'function') route(this, hash);
+            if(this.routeOnStart && hash.length > 0 && typeof this.routes[hash] == 'function') route(this, hash);
         }
     };
 
