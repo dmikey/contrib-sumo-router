@@ -1,3 +1,3 @@
-define(['./src/router', function(router){
+define(['./src/router'], function(router){
 	return router;
-}]);
+});

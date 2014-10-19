@@ -1,4 +1,4 @@
-define(['basho/main', 'haridashi/main'],function (platform, utility) {
+define(['basho/main', 'haridashi/main'], function (platform, utility) {
 
     var route = function(scope, hash){
         scope.hash = hash;

@@ -11,17 +11,7 @@ var config = {
 
 requirejs.optimize(config, function (buildResponse) {
 
-    var appends = [
-        'define(["',
-            lib_name,
-        '"], function (',
-            lib_name,
-        ') { return ',
-            lib_name,
-        '; });'
-    ];
-
-    fs.appendFile(config.out, appends.join(''), function (err) {
+    fs.appendFile(config.out,[], function (err) {
       if (err) throw err;
       console.log(lib_name + ' has been built!');
     });
